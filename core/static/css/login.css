@@ -1,0 +1,50 @@
+body {
+    background: url("../../static/img/background.jpg");
+    /*background: #8eb9ff;*/
+    background-size: cover;
+    margin: 0;
+}
+input {
+    width: 70%;
+    outline: none;
+    padding: 10px 11px;
+    border: 1px #aaa solid;
+    font-size: 15px;
+    background: #fff;
+    display: block;
+    margin: 20px auto;
+}
+#login {
+    background: #19b1ca;
+    color: #fff;
+    border: none;
+}
+
+div {
+    width: 30%;
+    height: 550px;
+    background: rgba(0, 0, 0, .2);
+    box-shadow: 5px 4px 43px #000;
+    position: absolute;
+    top: 80px;
+    left: 450px;
+}
+
+form {
+    margin: 30px auto;
+    text-align: center;
+}
+
+b {
+    font-size: 25px;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+}
+
+img {
+    display: block;
+    margin: -55px 0 auto;
+}

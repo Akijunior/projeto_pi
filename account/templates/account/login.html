@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="center">
+        <form action="" method="post">
+            {% csrf_token %}
+            <img src="../../static/img/Logo.png" class="img-fluid" alt="Responsive image" />
+            <b>Login</b>
+            <input type="email" name="" value="" placeholder="Email" id="" />
+            <input type="password" name="" value="" placeholder="Password" id="" />
+            <input class="btn btn-primary" type="submit" value="Logar">
+            <a href="">Esqueceu a senha?</a>
+        </form>
+    </div>
+{% endblock %}
