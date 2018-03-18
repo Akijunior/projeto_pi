@@ -120,7 +120,7 @@ USE_TZ = True
 # Para internacionalização
 _ = lambda s: s
 LANGUAGES = (
-    ('pt_br', _('Português')),
+    ('pt-br', _('Português')),
     ('en', _('Inglês')),
 )
 
