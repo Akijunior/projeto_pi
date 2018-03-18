@@ -32,7 +32,7 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username', 'email', 'name', 'cpf', 'birth_data', 'contact_phone']
 
 
 

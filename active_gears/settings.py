@@ -139,6 +139,6 @@ CONTACT_EMAIL = 'contato@simplemooc.com'
 
 # Auth
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'index'
 LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'account.User'
