@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.i18n import JavaScriptCatalog
+
+js_info_dict = {
+    'domain': 'djangojs',
+    'packages': ('wrnpro', ),
+}
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
+    path('jsi18n/',  JavaScriptCatalog.as_view(packages=[js_info_dict]), name='javascript-catalog'),
+    path('rosetta/', include('rosetta.urls')),
+
     path('admin/', admin.site.urls),
     path('', include('account.urls'), name='conta'),
     path('', include('core.urls'), name='core'),

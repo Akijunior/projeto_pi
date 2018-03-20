@@ -18,7 +18,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('E-mail', unique=True)
     name = models.CharField('Nome', max_length=100, blank=True)
     cpf = models.CharField('CPF', max_length=15)
-    birth_data = models.DateField('Data de nascimento', blank=True)
+    birth_data = models.DateField('Data de nascimento', blank=True, null=True)
     contact_phone = models.CharField('Telefone de contato', max_length=15, blank=True)
     is_active = models.BooleanField('Está ativo?', blank=True, default=True)
     is_staff = models.BooleanField('É da equipe?', blank=True, default=False)

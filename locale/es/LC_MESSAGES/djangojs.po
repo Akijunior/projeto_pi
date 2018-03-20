@@ -8,24 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-18 16:06-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2018-03-19 14:36-0300\n"
+"PO-Revision-Date: 2018-03-19 21:49-0234\n"
+"Last-Translator: b'Anonymous User <ju@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: .\account\templates\account\index.html:6
-msgid "Página index em teste"
-msgstr ""
-
-#: .\active_gears\settings.py:123
-msgid "Português"
-msgstr ""
-
-#: .\active_gears\settings.py:124
-msgid "Inglês"
-msgstr ""
+#: .\static\js\message.js:2
+msgid "Olá. Seja bem-vindo."
+msgstr "Hola es bienvenido."

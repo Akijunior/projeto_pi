@@ -1,23 +1,33 @@
 {% extends 'base_logado.html' %}
-{% load staticfiles %}
 {% load i18n %}
 {% block content %}
     <div class="center">
         {% trans "Página index em teste" %}
-        Home em teste.
+        {% trans "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis com a mior facilidade já vista no mercado." %}
+        {% trans message as msg %}
+        {% blocktrans %}
+            A mensagem é: {{ msg }}
+        {% endblocktrans %}
+        <br>
+        {% trans product %}
     </div>
     <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}"/>
-        <select name="language">
-            {% get_current_language as LANGUAGE_CODE %}
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
-            {% for language in languages %}
-                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                    {{ language.name_local }} ({{ language.code }})
-                </option>
-            {% endfor %}
-        </select>
+        <label>
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+        </label>
         <input type="submit" value="Go"/>
     </form>
+    <button class="btn btn-primary" onclick="show_message()" type="button">{% trans "Mostrar mensagem" %}</button>
 {% endblock %}

@@ -3,6 +3,8 @@ from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.decorators import login_required
 
+from django.utils.translation import gettext
+
 from .forms import RegisterForm, PasswordResetForm
 from .models import PasswordReset
 
@@ -10,6 +12,10 @@ User = get_user_model()
 
 @login_required
 def index(request):
+    context = {
+        'product': gettext("Mensagem de produto"),
+        'message': gettext("Nova mensagem de produto"),
+    }
     return render(request, 'account/index.html')
 
 def register(request):
