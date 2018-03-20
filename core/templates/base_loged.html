@@ -17,18 +17,46 @@
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Navbar</a>
-
+        <a class="navbar-brand" href="#">Active Gears</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register_gear' %}">Registrar</a>
+                    <a class="nav-link" href="{% url 'register_gear' %}">{% trans 'Registrar' %}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">{% trans 'Idiomas' %}</a>
+                    <div class="dropdown-menu">
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                            <label>
+                                <select name="language">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+
+                                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
+                                                selected{% endif %}>
+
+                                            <a class="dropdown-item" href="#">
+                                                {{ language.name_local }} ({{ language.code }})
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <input type="submit" class="btn btn-primary" value="Go"/>
+                        </form>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                    <a class="nav-link" href="{% url 'logout' %}">{% trans 'Sair' %}</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-19 21:52-0300\n"
-"PO-Revision-Date: 2018-03-19 21:59-0234\n"
+"POT-Creation-Date: 2018-03-20 19:00-0300\n"
+"PO-Revision-Date: 2018-03-20 19:02-0234\n"
 "Last-Translator: b'Anonymous User <ju@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -24,9 +24,13 @@ msgid "Página index em teste"
 msgstr "Página de índice en prueba"
 
 #: .\account\templates\account\index.html:6
+#, fuzzy
+#| msgid ""
+#| "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
+#| "com a mior facilidade já vista no mercado."
 msgid ""
 "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
-"com a mior facilidade já vista no mercado."
+"com a maior facilidade já vista no mercado."
 msgstr ""
 "Aquí podrán realizar pedidos y compras de piezas para sus automóviles con la"
 " máxima facilidad ya vista en el mercado."
@@ -41,15 +45,15 @@ msgstr ""
 "\n"
 "El mensaje es: %(msg)s"
 
-#: .\account\templates\account\index.html:32
+#: .\account\templates\account\index.html:23
 msgid "Mostrar mensagem"
 msgstr "Mostrar mensajes"
 
-#: .\account\views.py:16
+#: .\account\views.py:18
 msgid "Mensagem de produto"
 msgstr "Mensaje de producto"
 
-#: .\account\views.py:17
+#: .\account\views.py:19
 msgid "Nova mensagem de produto"
 msgstr "Nuevo mensaje de producto"
 
@@ -64,3 +68,15 @@ msgstr "Inglés"
 #: .\active_gears\settings.py:128
 msgid "Espanõl"
 msgstr "Espanõl"
+
+#: .\core\templates\base_loged.html:27
+msgid "Registrar"
+msgstr "Registro"
+
+#: .\core\templates\base_loged.html:31
+msgid "Idiomas"
+msgstr "Idiomas"
+
+#: .\core\templates\base_loged.html:59
+msgid "Sair"
+msgstr "abandonar"
