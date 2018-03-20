@@ -20,18 +20,7 @@ input {
     border: none;
 }
 
-div {
-    width: 30%;
-    height: 550px;
-    background: rgba(0, 0, 0, .2);
-    box-shadow: 5px 4px 43px #000;
-    position: absolute;
-    top: 80px;
-    left: 450px;
-}
-
 form {
-    margin: 30px auto;
     text-align: center;
 }
 
@@ -44,7 +33,3 @@ a {
     color: #fff;
 }
 
-img {
-    display: block;
-    margin: -55px 0 auto;
-}
