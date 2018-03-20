@@ -8,25 +8,56 @@
     <meta name="description" content="Active Gears - Peças Automotivas em geral"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <title>Active Gears</title>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Active Gears</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register_gear' %}">{% trans 'Registrar' %}</a>
-                </li>
-                <li class="nav-item dropdown">
+        
+        <div class="logo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" hrefhref="{% url 'index' %}">Navbar</a>
+        </div>
+    
+        <div class="my-header">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 field-busca" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="{% url 'register_gear' %}">Registrar</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Acessórios</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Pneus, Rodas e Calotas</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Faróis, Lanteras e iluminação</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Som e Vídeo</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Alarmes e segurança</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Para-choques e Grades</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="">Motocicletas</a>
+                    </li>
+                    <li class="nav-item center-align">
+                        <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                    </li>
+                  <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                        aria-haspopup="true" aria-expanded="false">{% trans 'Idiomas' %}</a>
                     <div class="dropdown-menu">
@@ -55,15 +86,10 @@
                         </form>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">{% trans 'Sair' %}</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                </ul>
+            </div>
         </div>
+
     </nav>
 </header>
 <div class="container">
