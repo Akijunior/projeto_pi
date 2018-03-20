@@ -1,8 +1,12 @@
+
 body {
     background: #8eb9ff;
     background-size: cover;
+    height: 100vh;
+    padding-top: 10px;
     margin: 0;
 }
+
 input {
     width: 70%;
     outline: none;
@@ -11,26 +15,23 @@ input {
     font-size: 15px;
     background: #fff;
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
 }
+
 #login {
     background: #19b1ca;
     color: #fff;
     border: none;
 }
 
-div {
+div.login-form {
     width: 30%;
-    height: 400px;
-    background: rgba(0, 0, 0, .2);
-    box-shadow: 5px 4px 43px #000;
-    position: absolute;
-    top: 80px;
-    left: 200px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form {
-    margin: 30px auto;
     text-align: center;
 }
 
@@ -43,8 +44,3 @@ a {
     color: #fff;
 }
 
-img {
-    display: block;
-    margin: -75px 0 auto;
-
-}

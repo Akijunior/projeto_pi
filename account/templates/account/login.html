@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="center">
+    
+    <div class="card login-form">
+      <img class="card-img-top img-fluid" src="../../static/img/Logo.png" alt="Responsive image" />
+      <div class="card-body">
+        
         <form action="" method="post">
             {% csrf_token %}
-            <img src="../../static/img/Logo.png" class="img-fluid" alt="Responsive image" />
             <b>Login</b>
             {% csrf_token %}
             <fieldset>
@@ -14,9 +17,10 @@
                     {{ field.errors }}
                 {% endfor %}
                 <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
-            </fieldset>
-            <a href="{% url 'register' %}">Cadastre-se agora</a>
+            </fieldset><br>
+            <a href="{% url 'register' %}">Cadastre-se agora</a> | 
             <a href="{% url 'password_reset' %}">Esqueceu a senha?</a>
         </form>
+      </div>
     </div>
 {% endblock %}
