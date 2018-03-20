@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -118,15 +120,19 @@ USE_L10N = True
 USE_TZ = True
 
 # Para internacionalização
-_ = lambda s: s
+from django.utils.translation import ugettext_lazy as gettext
+
 LANGUAGES = (
-    ('pt-br', _('Português')),
-    ('en', _('Inglês')),
+    ('pt-br', gettext('Português')),
+    ('en', gettext('English')),
+    ('es', gettext('Espanõl')),
 )
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+DEFAULT_CHARSET = 'utf-8'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,8 +142,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'simplemooc', 'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # E-mails
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

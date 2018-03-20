@@ -1,5 +1,7 @@
 from django.db import models
-from buy.models import Gear, Accessory, Buy
+from core.models import Gear
+
+from django.conf import settings
 
 class Buy(models.Model):
 	total_value = models.DecimalField(max_digits=5, decimal_places=2)
