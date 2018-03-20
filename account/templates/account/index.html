@@ -29,5 +29,14 @@
         </label>
         <input type="submit" value="Go"/>
     </form>
+
+    <div class="row">
+        {% for gear in gears %}
+            <div class="col-sm-3 col-sm-offset-1 clearfix">
+                <p style="text-align:center;"><b>{{ gear.name_descr }}</b></p>
+                <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block" width="150px"/>
+            </div>
+        {% endfor %}
+    </div>
     <button class="btn btn-primary" onclick="show_message()" type="button">{% trans "Mostrar mensagem" %}</button>
 {% endblock %}

@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.utils.translation import gettext
 
+from core.models import Gear
 from .forms import RegisterForm, PasswordResetForm
 from .models import PasswordReset
 
@@ -13,10 +14,11 @@ User = get_user_model()
 @login_required
 def index(request):
     context = {
+        'gears': Gear.objects.all(),
         'product': gettext("Mensagem de produto"),
         'message': gettext("Nova mensagem de produto"),
     }
-    return render(request, 'account/index.html')
+    return render(request, 'account/index.html', context)
 
 def register(request):
     template_name = 'account/register.html'
