@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
 
-
 class Automaker(models.Model):
     name_descr = models.CharField("Nome da montadora", max_length=60)
     number = models.CharField('Telefone de contato', max_length=15, blank=True)
@@ -45,7 +44,7 @@ class Gear(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     amount = models.IntegerField('Quantidade em estoque', blank=True, default=0)
     views = models.IntegerField('Visualizações', blank=True, default=0)
-    thumb = models.ImageField(upload_to='core/images', default='default.jpg', blank=True)
+    thumb = models.ImageField(upload_to='core/images', default='default.jpg', blank=True, null=True)
 
 
     def __str__(self):

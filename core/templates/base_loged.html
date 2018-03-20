@@ -22,10 +22,10 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="{% url 'register_gear' %}">Registrar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Sair</a>
@@ -38,7 +38,17 @@
         </div>
     </nav>
 </header>
-
+<div class="container">
+    {% if messages %}
+        <div class="pure-g-r content-ribbon">
+            <aside class="pure-u-1">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </aside>
+        </div>
+    {% endif %}
+</div>
 {% block content %}
 {% endblock %}
 </body>

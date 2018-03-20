@@ -1,4 +1,4 @@
-{% extends 'base_logado.html' %}
+{% extends 'base_loged.html' %}
 {% load i18n %}
 {% block content %}
     <div class="center">
@@ -11,7 +11,8 @@
         <br>
         {% trans product %}
     </div>
-    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}"/>
         <label>
             <select name="language">

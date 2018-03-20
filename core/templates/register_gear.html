@@ -1,0 +1,22 @@
+{% extends 'base_loged.html' %}
+{% block content %}
+    <div class="pure-u-1">
+        <h2>Informe os dados do produto</h2>
+        <form action="{% url 'register_gear' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                    <div>
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+                <div class="pure-controls">
+                    <button type="submit" class="button button-primary">Cadastrar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
