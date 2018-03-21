@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27114fae-bdc6-492e-9a46-b809e908710c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/buy/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/core/templates/register_automaker.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/core/templates/register_model.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/core/templates/register_vehicle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/buy/templates/buy/add_item.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/active_gears/urls.py" afterPath="$PROJECT_DIR$/active_gears/urls.py" />
-      <change beforePath="$PROJECT_DIR$/buy/models.py" afterPath="$PROJECT_DIR$/buy/models.py" />
-      <change beforePath="$PROJECT_DIR$/buy/views.py" afterPath="$PROJECT_DIR$/buy/views.py" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" afterPath="$PROJECT_DIR$/core/forms.py" />
-      <change beforePath="$PROJECT_DIR$/core/templates/base_loged.html" afterPath="$PROJECT_DIR$/core/templates/base_loged.html" />
       <change beforePath="$PROJECT_DIR$/core/templates/index.html" afterPath="$PROJECT_DIR$/core/templates/index.html" />
-      <change beforePath="$PROJECT_DIR$/core/templates/register_gear.html" afterPath="$PROJECT_DIR$/core/templates/register_gear.html" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" afterPath="$PROJECT_DIR$/core/urls.py" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" afterPath="$PROJECT_DIR$/core/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/buy/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
+              <caret line="19" column="95" lean-forward="false" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -66,12 +55,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+            <state relative-caret-position="305">
+              <caret line="69" column="53" lean-forward="false" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
               <folding>
                 <element signature="e#732#1070#0#HTML" expanded="false" />
-                <element signature="e#1787#2037#0#HTML" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_item.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buy/templates/buy/add_item.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,8 +91,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -102,6 +100,7 @@
     <findStrings>
       <find>reverse</find>
       <find>home</find>
+      <find>exampleModal&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,8 +145,9 @@
         <option value="$PROJECT_DIR$/buy/urls.py" />
         <option value="$PROJECT_DIR$/buy/models.py" />
         <option value="$PROJECT_DIR$/core/views.py" />
-        <option value="$PROJECT_DIR$/core/templates/index.html" />
         <option value="$PROJECT_DIR$/buy/views.py" />
+        <option value="$PROJECT_DIR$/buy/templates/buy/add_item.html" />
+        <option value="$PROJECT_DIR$/core/templates/index.html" />
       </list>
     </option>
   </component>
@@ -186,6 +186,24 @@
             <path>
               <item name="active_gears" type="b2602c69:ProjectViewProjectNode" />
               <item name="active_gears" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="active_gears" type="b2602c69:ProjectViewProjectNode" />
+              <item name="active_gears" type="462c0819:PsiDirectoryNode" />
+              <item name="buy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="active_gears" type="b2602c69:ProjectViewProjectNode" />
+              <item name="active_gears" type="462c0819:PsiDirectoryNode" />
+              <item name="buy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="active_gears" type="b2602c69:ProjectViewProjectNode" />
+              <item name="active_gears" type="462c0819:PsiDirectoryNode" />
+              <item name="buy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="buy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -307,14 +325,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/active_gears/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -655,7 +665,7 @@
     <entry file="file://$PROJECT_DIR$/buy/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
+          <caret line="19" column="95" lean-forward="false" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
           <folding />
         </state>
       </provider>
@@ -675,18 +685,25 @@
         <state relative-caret-position="221">
           <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buy/templates/buy/add_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+        <state relative-caret-position="305">
+          <caret line="69" column="53" lean-forward="false" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
           <folding>
             <element signature="e#732#1070#0#HTML" expanded="false" />
-            <element signature="e#1787#2037#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
