@@ -2,7 +2,7 @@
 {% block content %}
     <div class="pure-u-1">
         <h2>Informe os dados do produto</h2>
-        <form action="{% url 'register_gear' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'register_automaker' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-control">
                 {{ form.as_p }}

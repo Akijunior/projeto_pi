@@ -78,11 +78,11 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'register_gear' %}">Produtos</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Montadoras</a>
+                                <a class="dropdown-item" href="{% url 'register_automaker' %}">Montadoras</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Veículos</a>
+                                <a class="dropdown-item" href="{% url 'register_vehicle' %}">Veículos</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Modelos</a>
+                                <a class="dropdown-item" href="{% url 'register_model' %}">Modelos</a>
                             </div>
                         </li>
                     {% endif %}
@@ -91,19 +91,8 @@
         </div>
 
         <div class="cart">
-
-            <div class="center-align profile">
-                <i class="fas fa-user-circle fa-2x"></i>
-                {% if not user.is_authenticated %}
-                    <span class="item-header" style="padding-right: 10px;">
-                        <a href="{% url 'login' %}">Entre ou registre-se</a></span>
-                {% else %}
-                    <span class="item-header" style="padding-right: 10px;">
-                        <a href="{% url 'logout' %}">Sair</a></span>
-                    <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
-                    <span class="badge badge-info">{{ user.purshases.count }}</span>
-                {% endif %}
-            </div>
+            {% block user %}
+            {% endblock %}
 
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}

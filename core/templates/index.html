@@ -1,5 +1,21 @@
 {% extends 'base_loged.html' %}
 {% load i18n %}
+
+{% block user %}
+    <div class="center-align profile">
+        <i class="fas fa-user-circle fa-2x"></i>
+        {% if not user.is_authenticated %}
+            <span class="item-header" style="padding-right: 10px;">
+                        <a href="{% url 'login' %}">Entre ou registre-se</a></span>
+        {% else %}
+            <span class="item-header" style="padding-right: 10px;">
+                        <a href="{% url 'logout' %}">Sair</a></span>
+            <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+            <span class="badge badge-info">{{ buy.items.count }}</span>
+        {% endif %}
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="center">
         {% trans "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis com a maior facilidade já vista no mercado." %}
@@ -47,7 +63,9 @@
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                 {% trans "Não" %}
                                             </button>
-                                            <button type="button" class="btn btn-primary">{% trans "Sim" %}</button>
+                                            <a href="{% url 'add_item' gear.pk %}">
+                                                <button type="button" class="btn btn-primary">{% trans "Sim" %}</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -18,6 +18,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls'), name='conta'),
     path('', include('core.urls'), name='core'),
+    path('', include('buy.urls'), name='compra'),
 ]
 
 if settings.DEBUG:
