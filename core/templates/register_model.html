@@ -1,16 +1,11 @@
 {% extends 'base_loged.html' %}
 {% block content %}
-    <div class="pure-u-1">
-        <h2>Informe os dados do produto</h2>
-        <form action="{% url 'register_automaker' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-control">
-                {{ form.as_p }}
-            </div>
-            <div class="pure-controls">
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
-
-        </form>
-    </div>
+    <h1>Novo Modelo</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <div class="form-control">
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
 {% endblock %}
