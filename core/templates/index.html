@@ -3,7 +3,9 @@
 
 {% block user %}
     <div class="center-align profile">
-        <i class="fas fa-user-circle fa-2x"></i>
+        <a href="{% url 'user_profile' %}">
+            <i class="fas fa-user-circle fa-2x"></i>
+        </a>
         {% if not user.is_authenticated %}
             <span class="item-header" style="padding-right: 10px;">
                         <a href="{% url 'login' %}">Entre ou registre-se</a></span>

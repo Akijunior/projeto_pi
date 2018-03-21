@@ -46,6 +46,17 @@ def password_reset_confirm(request, key):
     context['form'] = form
     return render(request, template_name, context)
 
+def user_profile(request):
+    return render(request, 'account/user_profile.html')
 
-
-
+def profile_edit(request):
+    user = request.user
+    if request.method == "POST":
+        form = RegisterForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.save()
+            return redirect('user_profile')
+    else:
+        form = RegisterForm(instance=user)
+    return render(request, 'account/profile_edit.html', {'form': form})

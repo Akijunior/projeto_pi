@@ -1,0 +1,44 @@
+{% extends 'base_loged.html' %}
+{% block content %}
+    {% load i18n %}
+    <h1>Perfil do Usuário</h1>
+
+    <div class="form-control">
+        <div class="form-group"><b>Nome de usuário: </b>{{ user }}</div>
+        <div class="form-group"><b>Email do usuário: </b>{{ user.email }}</div>
+        <div class="form-group"><b>Nome completo do usuário: </b>
+            {% if user.name %}
+                {{ user.name }}
+            {% else %}
+                Não informado
+            {% endif %}
+        </div>
+        <div class="form-group"><b>CPF do usuário: </b>
+            {% if user.cpf %}
+                {{ user.cpf }}
+            {% else %}
+                Não informado
+            {% endif %}
+        </div>
+        <div class="form-group"><b>Data de nascimento do usuário: </b>
+            {% if user.birth_data %}
+                {{ user.birth_data }}
+            {% else %}
+                Não informada
+            {% endif %}
+        </div>
+        <div class="form-group"><b>Telefone do usuário: </b>
+            {% if user.contact_phone %}
+                {{ user.contact_phone }}
+            {% else %}
+                Não informado
+            {% endif %}
+        </div>
+        <div class="form-group"><b>Data de ingresso do usuário: </b>{{ user.date_joined }}</div>
+        <a href="{% url 'profile_edit' %}">
+            <button type="button"
+                    class="btn btn-primary btn-lg">{% trans "Editar perfil" %}</button>
+        </a>
+    </div>
+
+{% endblock %}

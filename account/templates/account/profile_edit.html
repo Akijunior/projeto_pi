@@ -1,0 +1,12 @@
+{% extends 'base_loged.html' %}
+{% block content %}
+    {% load i18n %}
+    <h1>Editar perfil</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="save btn btn-default">Salvar</button>
+    </form>
+{% endblock %}
