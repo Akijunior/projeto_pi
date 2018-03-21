@@ -22,7 +22,7 @@ class Vehicle(models.Model):
 class Modelo(models.Model):
     name_descr = models.CharField("Nome do modelo", max_length=60)
     vehicle = models.ForeignKey(Vehicle, verbose_name='Veiculo', related_name='modelo', on_delete=models.CASCADE)
-    year = models.IntegerField(validators=[MaxValueValidator(3000)])
+    year = models.IntegerField('Ano do modelo', validators=[MaxValueValidator(3000)])
 
     def __str__(self):
         return str(self.vehicle) + " - " + self.name_descr + " " + str(self.year)
@@ -37,15 +37,21 @@ class Gear(models.Model):
         ('segurança', 'Alarmes e segurança'),
         ('grades', 'Para-choques e Grades'),
         ('motocicletas', 'Motocicletas'),
+        ('sem_tipo', 'Sem tipo'),
     )
     name_descr = models.CharField("Nome da peça", max_length=60)
-    type_gear = models.CharField(max_length=20, choices=TYPE_GEAR_CHOICES, default='Sem tipo')
-    modelo = models.ForeignKey(Modelo, null=True, related_name='pecas', on_delete=models.SET_NULL)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    type_gear = models.CharField(max_length=20, choices=TYPE_GEAR_CHOICES, default='sem_tipo', verbose_name='Tipo da peça')
+    modelo = models.ForeignKey(Modelo, null=True, related_name='pecas', on_delete=models.SET_NULL, verbose_name='Modelo da peça')
+    price = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Preço')
     amount = models.IntegerField('Quantidade em estoque', blank=True, default=0)
     views = models.IntegerField('Visualizações', blank=True, default=0)
-    thumb = models.ImageField(upload_to='core/images', default='default.jpg', blank=True, null=True)
+    thumb = models.ImageField(verbose_name='Imagem representativa',
+                              upload_to='core/images', default='default.jpg', blank=True, null=True)
 
 
     def __str__(self):
         return self.name_descr + " - " + self.type_gear + " " + str(self.modelo) + " = " + str(self.price)
+
+    class Meta:
+        verbose_name = 'Peça'
+        verbose_name_plural = 'Peças'

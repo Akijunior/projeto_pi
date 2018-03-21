@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 18:59-0300\n"
-"PO-Revision-Date: 2018-03-20 19:01-0234\n"
+"POT-Creation-Date: 2018-03-20 23:19-0300\n"
+"PO-Revision-Date: 2018-03-20 23:20-0234\n"
 "Last-Translator: b'Anonymous User <ju@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,14 +20,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
 #: .\account\templates\account\index.html:5
-msgid "Página index em teste"
-msgstr "Test page index"
-
-#: .\account\templates\account\index.html:6
-#, fuzzy
-#| msgid ""
-#| "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
-#| "com a mior facilidade já vista no mercado."
 msgid ""
 "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
 "com a maior facilidade já vista no mercado."
@@ -35,7 +27,7 @@ msgstr ""
 "Here you will be able to order and purchase parts for your cars with the "
 "best facility ever seen on the market."
 
-#: .\account\templates\account\index.html:8
+#: .\account\templates\account\index.html:7
 #, python-format
 msgid ""
 "\n"
@@ -45,7 +37,12 @@ msgstr ""
 "\n"
 "This message is: %(msg)s"
 
-#: .\account\templates\account\index.html:23
+#: .\account\templates\account\index.html:18
+#, python-format
+msgid "%(gear.name_descr)s"
+msgstr "%(gear.name_descr)s"
+
+#: .\account\templates\account\index.html:27
 msgid "Mostrar mensagem"
 msgstr "Show message"
 
@@ -69,14 +66,54 @@ msgstr "English"
 msgid "Espanõl"
 msgstr "Spanish"
 
-#: .\core\templates\base_loged.html:27
-msgid "Registrar"
-msgstr "Register"
+#: .\core\templates\base_loged.html:32
+msgid "Buscar"
+msgstr "Search"
 
-#: .\core\templates\base_loged.html:31
-msgid "Idiomas"
-msgstr "language"
+#: .\core\templates\base_loged.html:45
+msgid "Acessórios"
+msgstr "Accessories"
 
-#: .\core\templates\base_loged.html:59
-msgid "Sair"
-msgstr "Logout"
+#: .\core\templates\base_loged.html:49
+msgid "Roda"
+msgstr "Wheel"
+
+#: .\core\templates\base_loged.html:53
+msgid "Iluminação"
+msgstr "Lighting"
+
+#: .\core\templates\base_loged.html:57
+msgid "Multimidia"
+msgstr "Multimedia"
+
+#: .\core\templates\base_loged.html:61
+msgid "Segurança"
+msgstr "Safety"
+
+#: .\core\templates\base_loged.html:65
+msgid "Grades"
+msgstr "Grids"
+
+#: .\core\templates\base_loged.html:69
+msgid "Motocicletas"
+msgstr "Motorcycles"
+
+#~ msgid ""
+#~ "\n"
+#~ "                        <b>%(gear.name_descr)s | R$%(gear.price)s</b>\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "<b>%(gear.name_descr)s | R$%(gear.price)s</b>"
+
+#~ msgid "Página index em teste"
+#~ msgstr "Test page index"
+
+#~ msgid "Registrar"
+#~ msgstr "Register"
+
+#~ msgid "Idiomas"
+#~ msgstr "language"
+
+#~ msgid "Sair"
+#~ msgstr "Logout"

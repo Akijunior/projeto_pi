@@ -2,7 +2,6 @@
 {% load i18n %}
 {% block content %}
     <div class="center">
-        {% trans "Página index em teste" %}
         {% trans "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis com a maior facilidade já vista no mercado." %}
         {% trans message as msg %}
         {% blocktrans %}
@@ -14,9 +13,11 @@
 
     <div class="row">
         {% for gear in gears %}
-
             <div class="col-sm-3 col-sm-offset-1 clearfix">
-                <p style="text-align:center;"><b>{{ gear.name_descr }} | R${{ gear.price }}</b></p>
+                <p style="text-align:center;">
+                    <b>{% blocktrans %}{{ gear.name_descr }}{% endblocktrans %}
+                        {{ gear.name_descr }} | R${{ gear.price }}</b>
+                </p>
                 <a href="#">
                     <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
                          width="150px"/>

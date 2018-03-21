@@ -12,7 +12,7 @@ def register_gear(request):
         gear = form.save(commit=False)
         gear.save()
         messages.success(request, 'A nova peça foi adicionada com sucesso.')
-        redirect('index')
+        return redirect('index')
     template_name = 'register_gear.html'
     context = {
         'form': form,
