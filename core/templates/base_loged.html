@@ -20,7 +20,7 @@
                     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'index' %}">Navbar</a>
+            <a class="navbar-brand" href="{% url 'index' %}">Active Gears</a>
         </div>
 
         <div class="my-header">
@@ -35,11 +35,6 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <!--
-                    <li class="nav-item center-align">
-                        <a class="nav-link" href="{% url 'register_gear' %}">Registrar</a>
-                    </li>
-                    -->
                     <li class="nav-item center-align">
                         <a class="nav-link item-header" href=""><span class="align-middle">
                             {% trans 'Acessórios' %}</span></a>
@@ -73,16 +68,16 @@
                         <li class="nav-item dropdown center-align">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cadastrar
+                                {% trans 'Cadastrar' %}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{% url 'register_gear' %}">Produtos</a>
+                                <a class="dropdown-item" href="{% url 'register_gear' %}">{% trans 'Produtos' %}</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'register_automaker' %}">Montadoras</a>
+                                <a class="dropdown-item" href="{% url 'register_automaker' %}">{% trans 'Montadoras' %}</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'register_vehicle' %}">Veículos</a>
+                                <a class="dropdown-item" href="{% url 'register_vehicle' %}">{% trans 'Veículos' %}</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'register_model' %}">Modelos</a>
+                                <a class="dropdown-item" href="{% url 'register_model' %}">{% trans 'Modelos' %}</a>
                             </div>
                         </li>
                     {% endif %}
@@ -117,11 +112,6 @@
                 </label>
                 <input type="submit" class="btn btn-primary" value="Go"/>
             </form>
-            <!--
-            <li class="nav-item center-align">
-                <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-            </li>
-            -->
         </div>
     </nav>
 </header>

@@ -86,3 +86,6 @@ def register_automaker(request):
     }
     return render(request, template_name, context)
 
+
+
+

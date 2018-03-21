@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 
 from buy.models import Item, Buy
@@ -19,4 +20,5 @@ def add_item(request, pk):
         item = Item(gear=gear, buy=buy)
     item.amount += 1
     item.save()
+    messages.success(request, 'Um novo %s foi adicionado com sucesso ao seu carrinho' % str(item.gear.name_descr))
     return redirect('index')
