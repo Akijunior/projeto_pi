@@ -1,4 +1,8 @@
-header{}
+.nav-header{
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 
 .logo{
 	width: 15%;
@@ -15,4 +19,22 @@ header{}
 .center-align{
 	text-align: center;
 	width: 100px;
+}
+
+.item-header{
+	height: 50px;
+	border-right: 1px solid #B7DAF3;
+}
+
+.item{
+	height: 50px;
+}
+
+.cart{
+	width: 20%;
+	text-align: right;
+}
+
+.profile{
+	width: 100%;
 }
