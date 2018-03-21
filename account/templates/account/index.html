@@ -3,7 +3,7 @@
 {% block content %}
     <div class="center">
         {% trans "Página index em teste" %}
-        {% trans "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis com a mior facilidade já vista no mercado." %}
+        {% trans "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis com a maior facilidade já vista no mercado." %}
         {% trans message as msg %}
         {% blocktrans %}
             A mensagem é: {{ msg }}
@@ -11,31 +11,16 @@
         <br>
         {% trans product %}
     </div>
-    <form action="{% url 'set_language' %}" method="post">
-        {% csrf_token %}
-        <input name="next" type="hidden" value="{{ redirect_to }}"/>
-        <label>
-            <select name="language">
-                {% get_current_language as LANGUAGE_CODE %}
-                {% get_available_languages as LANGUAGES %}
-                {% get_language_info_list for LANGUAGES as languages %}
-                {% for language in languages %}
-
-                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-
-                        {{ language.name_local }} ({{ language.code }})
-                    </option>
-                {% endfor %}
-            </select>
-        </label>
-        <input type="submit" value="Go"/>
-    </form>
 
     <div class="row">
         {% for gear in gears %}
+
             <div class="col-sm-3 col-sm-offset-1 clearfix">
-                <p style="text-align:center;"><b>{{ gear.name_descr }}</b></p>
-                <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block" width="150px"/>
+                <p style="text-align:center;"><b>{{ gear.name_descr }} | R${{ gear.price }}</b></p>
+                <a href="#">
+                    <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
+                         width="150px"/>
+                </a>
             </div>
         {% endfor %}
     </div>
