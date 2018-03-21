@@ -69,19 +69,41 @@
                             {% trans 'Motocicletas' %}
                         </span></a>
                     </li>
-
+                    {% if user.is_staff %}
+                        <li class="nav-item dropdown center-align">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cadastrar
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'register_gear' %}">Produtos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Montadoras</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Veículos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Modelos</a>
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
 
         <div class="cart">
+
             <div class="center-align profile">
                 <i class="fas fa-user-circle fa-2x"></i>
-
-                <span class="item-header" style="padding-right: 10px;">
-                        <a href="{% url 'login' %}">Entre ou registre-se </a></span>
-                <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+                {% if not user.is_authenticated %}
+                    <span class="item-header" style="padding-right: 10px;">
+                        <a href="{% url 'login' %}">Entre ou registre-se</a></span>
+                {% else %}
+                    <span class="item-header" style="padding-right: 10px;">
+                        <a href="{% url 'logout' %}">Sair</a></span>
+                    <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+                {% endif %}
             </div>
+
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}"/>

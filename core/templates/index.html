@@ -20,8 +20,21 @@
                 </p>
                 <a href="#">
                     <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
-                         width="150px"/>
+                         width="150px" height="150px"/>
                 </a>
+                {% if user.is_authenticated %}
+                    {% if not user.is_staff %}
+                        <div class="center">
+                            <button id='add_cart' class="btn btn-primary"
+                                    type="button">{% trans "Adicionar ao carrinho" %}</button>
+                        </div>
+                    {% else %}
+                        <div class="center">
+                            <button id='mng_item' class="btn btn-primary"
+                                    type="button">{% trans "Gerenciar item" %}</button>
+                        </div>
+                    {% endif %}
+                {% endif %}
             </div>
         {% endfor %}
     </div>
