@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% load i18n %}
+    <div class="form-control">
+        <div class="form-group pull-right">
+            <img src="{{ object.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
+                 width="150px" height="150px"/></div>
+        <div class="form-group"><b>Nome da peça: </b>{{ object.name_descr }}</div>
+        <div class="form-group"><b>Tipo da peça: </b>{{ object.get_type_gear_display }}</div>
+        <div class="form-group"><b>Modelo da peça: </b>{{ object.modelo }}</div>
+        <div class="form-group"><b>Valor da peça: </b>{{ object.price }}</div>
+        <div class="form-group"><b>Quantidade em estoque: </b>{{ object.amount }}</div>
+        <div class="form-group"><b>Quantidade de visualizações: </b>{{ object.views }}</div>
+
+        <div class="form-group"><b>Data de ingresso do usuário: </b>{{ user.date_joined }}</div>
+        {% if user.is_staff %}
+            <a href="{% url 'gear_edit' object.pk %}">
+                <button type="button"
+                        class="btn btn-primary btn-lg">{% trans "Editar informações" %}</button>
+            </a>
+        {% endif %}
+    </div>
+
+{% endblock %}
