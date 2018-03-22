@@ -15,8 +15,11 @@ def index(request):
         'product': gettext("Mensagem de produto"),
         'message': gettext("Nova mensagem de produto"),
     }
-    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
-        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='closed').exists():
+        print('lol')
+        print(request.user.id)
+        print('dota')
+        context['buy'] = Buy.objects.get(buyer=request.user, status='closed')
     return render(request, 'index.html', context)
 
 

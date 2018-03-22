@@ -31,5 +31,5 @@ def purchase_status(request, pk):
     total_value = 0
     for item in buy.items.all():
         total_value += item.gear.price * item.amount
-    return redirect(reverse('buy:purchase_status'), kwargs={'buy': buy, 'total':total_value})
+    return render(request, 'buy/purchase_status.html', {'buy': buy, 'total':total_value})
 
