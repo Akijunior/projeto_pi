@@ -13,9 +13,12 @@ def add_item(request, pk):
     # Caso a compra se inicie agora
     if user.purshases.filter(status='open').count() == 0:
         buy = Buy(buyer=user, status='open')
+        buy.save()
     # Caso a compra ja estivesse em andamento
     else:
         buy = user.purshases.get(status='open')
+        
+        #print('kkkkkkkkkk > '+str(buy.id))
     if Item.objects.filter(gear=gear, buy=buy).exists():
         item = Item.objects.get(gear=gear, buy=buy)
     else:
@@ -30,6 +33,36 @@ def purchase_status(request, pk):
     buy = get_object_or_404(Buy, pk=pk)
     total_value = 0
     for item in buy.items.all():
-        total_value += item.gear.price * item.amount
+        print(len(buy.items.all()))
+        if item.amount:
+            total_value += item.gear.price * item.amount
+        else:
+            total_value += item.gear.price
     return render(request, 'buy/purchase_status.html', {'buy': buy, 'total':total_value})
 
+@login_required
+def register_payment(request):
+    if not request.user.is_staff:
+        messages.error(request, 'Você não tem permissão de acessar essa página')
+        return redirect('index')
+    
+
+def payment(request, pk):
+    buy = get_object_or_404(Buy, pk=pk)
+    form = PayForm(request.POST or None)
+    if form.is_valid():
+        modelo = form.save(commit=False)
+        m_total_value = 0
+        for item in buy.items.all():
+            m_total_value += item.gear.price * item.amount
+        modelo.buy = buy
+        modelo.save()
+        messages.success(request, 'Pagamento efetuado.')
+        buy.status = 'closed'
+        buy.save()
+        return redirect('index')
+    context = {
+        'buy': buy,
+        'form': form,
+    }
+    return render(request, 'buy/payment_page.html', context)

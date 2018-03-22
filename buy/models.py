@@ -21,7 +21,7 @@ class Buy(models.Model):
 
 class Item(models.Model):
     buy = models.ForeignKey('Buy', related_name='items',on_delete=models.CASCADE)
-    gear = models.OneToOneField('core.Gear', verbose_name='peça', related_name='item', on_delete=models.CASCADE)
+    gear = models.ForeignKey('core.Gear', verbose_name='peça', related_name='item', on_delete=models.CASCADE)
     amount = models.IntegerField('Quantidade', default=0)
 
     def __str__(self):
@@ -36,7 +36,7 @@ class Pay(models.Model):
     )
     type_pay = models.CharField(max_length=20, choices=TYPE_PAY_CHOICES, default='Em especie')
     date_pay = models.DateTimeField('Data de pagamento', auto_now_add=True)
-    total_value = models.DecimalField(max_digits=5, decimal_places=2)
+    total_value = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     buy = models.ForeignKey(Buy, verbose_name='Compra', related_name='pagamento', on_delete=models.CASCADE)
 
 
@@ -52,13 +52,11 @@ class Order(models.Model):
     def __str__(self):
         return "Solicitante: %s | Data da solicitação: %s" % (str(self.requester), str(self.date_order))
 
-
-def post_save_reply(instance, **kwargs):
-    instance.amount_items = instance.items.count()
-    instance.save()
-    if instance.status == 'open':
-        instance.buyer.purshases.exclude(pk=instance.pk).update(status='closed')
+def post_buy_save_reply(instance, **kwargs):
+    m_buy = Buy.objects.get(pk=instance.buy.id)
+    m_buy.amount_items += m_buy.items.count()
+    m_buy.save()
 
 models.signals.post_save.connect(
-    post_save_reply, sender=Buy, dispatch_uid='post_save_reply'
+    post_buy_save_reply, sender=Item, dispatch_uid='post_buy_save_reply'
 )

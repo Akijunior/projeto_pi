@@ -47,6 +47,7 @@ def password_reset_confirm(request, key):
     return render(request, template_name, context)
 
 def user_profile(request):
+    
     return render(request, 'account/user_profile.html')
 
 def profile_edit(request):

@@ -8,7 +8,7 @@
             <div class="form-group"><b><i>{{ item.gear }}</i>  X {{ item.amount }}</b></div>
        {% endfor %}
         {% if not user.is_staff %}
-            <a href="{% url 'payment' %}">
+            <a href="{% url 'payment' buy.pk %}">
                 <button type="button"
                         class="btn btn-primary btn-lg">{% trans "Finalizar Compra" %}</button>
             </a>
