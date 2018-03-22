@@ -38,7 +38,7 @@
             <div class="col-sm-3 col-sm-offset-1 clearfix">
                 <p style="text-align:center;">
                     <b>{% blocktrans %}{{ gear.name_descr }}{% endblocktrans %}
-                        {{ gear.name_descr }} | R${{ gear.price }}</b>
+                        {{ gear.name_descr }} | R${{ gear.price }}0</b>
                 </p>
                 <a href="{% url 'gear_manage' gear.pk %}">
                     <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"

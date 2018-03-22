@@ -155,7 +155,7 @@ DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
 # EMAIL_HOST_PASSWORD = 'senha'
 # EMAIL_PORT = 587
 
-CONTACT_EMAIL = 'contato@simplemooc.com'
+CONTACT_EMAIL = 'contato@activegears.com'
 
 # Auth
 LOGIN_URL = 'login'
