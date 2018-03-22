@@ -3,7 +3,7 @@
 
 {% block user %}
     <div class="center-align profile">
-        <a href="{% url 'user_profile' %}">
+        <a href="{% if user.is_authenticated %}{% url 'user_profile' %}{% endif %}">
             <i class="fas fa-user-circle fa-2x"></i>
         </a>
         {% if not user.is_authenticated %}
