@@ -23,6 +23,7 @@ def search_gear(request):
     for i in range(len(list_search)):
         if list_search[i][1] != 0:
             list_best.append(Gear.objects.get(name_descr=list_search[i][0]))
+    print(list_best)
 
     return render(request, 'search_result.html', {'gears':list_best})
 
