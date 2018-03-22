@@ -191,3 +191,17 @@ def motocicletas(request):
     if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
         context['buy'] = Buy.objects.get(buyer=request.user, status='open')
     return render(request, 'index.html', context)
+
+def aumentar_qtd(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    gear = get_object_or_404(Gear, pk=item.gear)
+    item.amount += 1
+    item.save()
+    context = {
+        'item': item,
+        'gear': gear,
+    }
+    context['total'] = gears.price * item.amount
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)

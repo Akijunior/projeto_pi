@@ -16,5 +16,7 @@ urlpatterns = [
     path('segurança', seguranca, name='segurança'),
     path('grades', grades, name='grades'),
     path('motocicletas', motocicletas, name='motocicletas'),
+    path('aumentar_qtd', aumentar_qtd, name='aumentar_qtd'),
+    #path('diminuir_qtd', diminuir_qtd, name='diminuir_qtd'),
     path('', index, name='index'),
 ]
