@@ -12,7 +12,9 @@
         {% else %}
             <span class="item-header" style="padding-right: 10px;">
                         <a href="{% url 'logout' %}">Sair</a></span>
-            <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+            <a href="{% url 'purchase_status' buy.pk %}">
+                <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+            </a>
             <span class="badge badge-info">{{ buy.items.count }}</span>
         {% endif %}
     </div>
