@@ -9,5 +9,12 @@ urlpatterns = [
     path('register_model', register_model, name='register_model'),
     path('register_vehicle', register_vehicle, name='register_vehicle'),
     path('register_automaker', register_automaker, name='register_automaker'),
+    path('acessorios', acessorios, name='acessorios'),
+    path('roda', roda, name='roda'),
+    path('iluminação', iluminacao, name='iluminação'),
+    path('multimidia', multimidia, name='multimidia'),
+    path('segurança', seguranca, name='segurança'),
+    path('grades', grades, name='grades'),
+    path('motocicletas', motocicletas, name='motocicletas'),
     path('', index, name='index'),
 ]

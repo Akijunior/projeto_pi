@@ -135,3 +135,59 @@ def gear_edit(request, pk):
     else:
         form = GearForm(instance=gear)
     return render(request, 'gear_edit.html', {'form': form})
+
+def acessorios(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='acessórios'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def roda(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='roda'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def iluminacao(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='iluminação'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def multimidia(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='multimidia'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def seguranca(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='segurança'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def grades(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='grades'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
+
+def motocicletas(request):
+    context = {
+        'gears': Gear.objects.filter(type_gear='motocicletas'),
+    }
+    if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
+        context['buy'] = Buy.objects.get(buyer=request.user, status='open')
+    return render(request, 'index.html', context)
