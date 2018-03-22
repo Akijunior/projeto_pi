@@ -50,7 +50,7 @@ class Gear(models.Model):
 
 
     def __str__(self):
-        return self.name_descr + " - " + self.type_gear + " " + str(self.modelo) + " = " + str(self.price)
+        return self.name_descr + " - " + self.type_gear + " " + str(self.modelo) + "\nPreço: R$ " + str(self.price)
 
     class Meta:
         verbose_name = 'Peça'
