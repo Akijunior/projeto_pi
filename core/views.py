@@ -4,10 +4,27 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
 from django.views.generic import DetailView
 
+from buy.forms import SearchForm
 from buy.models import Buy, Item
+from buy.search_fuzzy import get_search_matches
 from core.forms import GearForm, ModeloForm, VehicleForm, AutomakerForm
 from core.models import Gear
 
+def search_gear(request):
+
+    gears = []
+    for gear in Gear.objects.all():
+        gears.append(gear.name_descr)
+
+    desired_search = request.GET.get('my_search', '')
+
+    list_search = get_search_matches(desired_search, gears)
+    list_best = []
+    for i in range(len(list_search)):
+        if list_search[i][1] != 0:
+            list_best.append(Gear.objects.get(name_descr=list_search[i][0]))
+
+    return render(request, 'search_result.html', {'gears':list_best})
 
 def index(request):
     context = {
@@ -126,7 +143,7 @@ def gear_edit(request, pk):
         return redirect('index')
     gear = get_object_or_404(Gear, pk=pk)
     if request.method == "POST":
-        form = GearForm(request.POST, instance=gear)
+        form = GearForm(request.POST, request.FILES, instance=gear)
         if form.is_valid():
             gear = form.save(commit=False)
             gear.save()

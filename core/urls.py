@@ -19,4 +19,6 @@ urlpatterns = [
     path('aumentar_qtd', aumentar_qtd, name='aumentar_qtd'),
     #path('diminuir_qtd', diminuir_qtd, name='diminuir_qtd'),
     path('', index, name='index'),
+    path('buscar', search_gear, name='search_gear'),
+
 ]

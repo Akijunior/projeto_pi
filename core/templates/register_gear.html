@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% block content %}
     <h1>Nova Peça</h1>
-    <form method="POST" class="post-form">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-control">
             {{ form.as_p }}

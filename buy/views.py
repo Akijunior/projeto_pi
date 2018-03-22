@@ -4,8 +4,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from buy.forms import PayForm
 from buy.models import Item, Buy, Order
+from buy.search_fuzzy import get_search_matches
 from core.models import Gear
-
 
 def request_order(request, pk):
     gear = get_object_or_404(Gear, pk=pk)

@@ -2,8 +2,10 @@ certifi==2018.1.18
 chardet==3.0.4
 Django==2.0.3
 django-rosetta==0.8.1
+fuzzywuzzy==0.16.0
 idna==2.6
 microsofttranslator==0.8
+Pillow==5.0.0
 polib==1.1.0
 pytz==2018.3
 requests==2.18.4
