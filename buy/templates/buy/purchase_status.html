@@ -3,7 +3,7 @@
     {% load i18n %}
     <div class="form-control">
         <h1>Status da compra</h1>
-        <h2>Valor total: {{ total }}</h2>
+        <h2>Valor total: R$ {{ total }}0</h2>
         {% for item in buy.items.all %}
             <div class="form-group"><b><i>{{ item.gear }}</i>  X {{ item.amount }}</b></div>
        {% endfor %}

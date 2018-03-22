@@ -3,9 +3,16 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
 from buy.forms import PayForm
-from buy.models import Item, Buy
+from buy.models import Item, Buy, Order
 from core.models import Gear
 
+
+def request_order(request, pk):
+    gear = get_object_or_404(Gear, pk=pk)
+    order = Order(requester=request.user, item=gear)
+    order.save()
+    messages.success(request, 'Uma solicitação de %s foi feita com sucesso para você' % str(gear.name_descr))
+    return redirect('index')
 
 def add_item(request, pk):
     user = request.user
@@ -54,8 +61,10 @@ def payment(request, pk):
         m_total_value = 0
         for item in buy.items.all():
             m_total_value += item.gear.price * item.amount
+            item.gear.amount -= item.amount
+            item.gear.save()
         modelo.buy = buy
-        modelo.total_value = float(m_total_value)
+        modelo.total_value = m_total_value
         modelo.save()
         messages.success(request, 'Pagamento efetuado.')
         buy.status = 'closed'

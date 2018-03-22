@@ -11,12 +11,12 @@
                         <a href="{% url 'login' %}">Entre ou registre-se</a></span>
         {% else %}
             <span class="item-header" style="padding-right: 10px;">
-                <span>{{user}}</span>
+                <span>{{ user }}</span>
                 <a href="{% url 'logout' %}">Sair</a></span>
 
-                <a href="{% if buy %}{% url 'purchase_status' buy.pk %}{% endif %}">
-                    <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
-                </a>
+            <a href="{% if buy %}{% url 'purchase_status' buy.pk %}{% endif %}">
+                <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
+            </a>
             <span class="badge badge-info">{{ buy.amount_items }}</span>
         {% endif %}
     </div>
@@ -40,55 +40,93 @@
                     <b>{% blocktrans %}{{ gear.name_descr }}{% endblocktrans %}
                         {{ gear.name_descr }} | R${{ gear.price }}</b>
                 </p>
-                <a href="#">
+                <a href="{% url 'gear_manage' gear.pk %}">
                     <img src="{{ gear.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
                          width="150px" height="150px"/>
                 </a>
                 {% if user.is_authenticated %}
                     {% if not user.is_staff %}
                         <div class="center">
-                            <button id='add_cart' class="btn btn-primary"
-                                    type="button" data-toggle="modal" data-target="#exampleModal{{ gear.pk }}">
-                                {% trans "Adicionar ao carrinho" %}
-                            </button>
-                            <div class="modal fade" id="exampleModal{{ gear.pk }}" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                {% trans "Adicionar ao carrinho" %}
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
+                            {% if gear.amount != 0 %}
+                                <button id='add_cart' class="btn btn-primary"
+                                        type="button" data-toggle="modal" data-target="#exampleModal{{ gear.pk }}">
+                                    {% trans "Adicionar ao carrinho" %}
+                                </button>
+                                <div class="modal fade" id="exampleModal{{ gear.pk }}" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    {% trans "Adicionar ao carrinho" %}
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
 
                                                 {{ gear.name_descr }}
                                                 {{ total }}
 
-                                            <div style="float: right;">
-                                                <a href="">
-                                                    <i class="fas fa-plus fa-2x"></i>
-                                                </a>
-                                                <a href="">
-                                                    <i class="fas fa-minus fa-2x"></i>
-                                                </a>
+                                                <div style="float: right;">
+                                                    <a href="">
+                                                        <i class="fas fa-plus fa-2x"></i>
+                                                    </a>
+                                                    <a href="">
+                                                        <i class="fas fa-minus fa-2x"></i>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="{% url 'add_item' gear.pk %}">
-                                                <button type="button"
-                                                        class="btn btn-primary btn-lg">{% trans "Sim" %}</button>
-                                            </a>
-                                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
-                                                {% trans "Não" %}
-                                            </button>
+                                            <div class="modal-footer">
+                                                <a href="{% url 'add_item' gear.pk %}">
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-lg">{% trans "Sim" %}</button>
+                                                </a>
+                                                <button type="button" class="btn btn-secondary btn-lg"
+                                                        data-dismiss="modal">
+                                                    {% trans "Não" %}
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            {% else %}
+                                <button id='add_cart' class="btn btn-primary"
+                                        type="button" data-toggle="modal" data-target="#exampleModal{{ gear.pk }}">
+                                    {% trans "Sem estoque" %}
+                                </button>
+                                <div class="modal fade" id="exampleModal{{ gear.pk }}" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    {% trans "Fazer solicitação" %}
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Deseja receber notificações quando houver {{ gear.name_descr }} em estoque?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="{% url 'request_order' gear.pk %}">
+                                                    <button type="button"
+                                                            class="btn btn-primary btn-lg">{% trans "Sim" %}</button>
+                                                </a>
+                                                <button type="button" class="btn btn-secondary btn-lg"
+                                                        data-dismiss="modal">
+                                                    {% trans "Não" %}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>
                     {% else %}
                         <div class="center">

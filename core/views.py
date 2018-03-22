@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext
 from django.views.generic import DetailView
 
-from buy.models import Buy
+from buy.models import Buy, Item
 from core.forms import GearForm, ModeloForm, VehicleForm, AutomakerForm
 from core.models import Gear
 
@@ -98,9 +98,8 @@ class GearView(DetailView):
 
     def get(self, request, *args, **kwargs):
         response = super(GearView, self).get(request, *args, **kwargs)
-        if not self.request.user.is_authenticated:
-            self.object.views += 1
-            self.object.save()
+        self.object.views += 1
+        self.object.save()
         return response
 
     def post(self, request, *args, **kwargs):
@@ -201,7 +200,7 @@ def aumentar_qtd(request, pk):
         'item': item,
         'gear': gear,
     }
-    context['total'] = gears.price * item.amount
+    context['total'] = gear.price * item.amount
     if request.user.is_authenticated and Buy.objects.filter(buyer=request.user, status='open').exists():
         context['buy'] = Buy.objects.get(buyer=request.user, status='open')
     return render(request, 'index.html', context)

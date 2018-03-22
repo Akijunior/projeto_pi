@@ -8,17 +8,101 @@
         <div class="form-group"><b>Nome da peça: </b>{{ object.name_descr }}</div>
         <div class="form-group"><b>Tipo da peça: </b>{{ object.get_type_gear_display }}</div>
         <div class="form-group"><b>Modelo da peça: </b>{{ object.modelo }}</div>
-        <div class="form-group"><b>Valor da peça: </b>{{ object.price }}</div>
+        <div class="form-group"><b>Valor da peça: R$</b>{{ object.price }}0</div>
         <div class="form-group"><b>Quantidade em estoque: </b>{{ object.amount }}</div>
         <div class="form-group"><b>Quantidade de visualizações: </b>{{ object.views }}</div>
-
-        <div class="form-group"><b>Data de ingresso do usuário: </b>{{ user.date_joined }}</div>
         {% if user.is_staff %}
-            <a href="{% url 'gear_edit' object.pk %}">
-                <button type="button"
-                        class="btn btn-primary btn-lg">{% trans "Editar informações" %}</button>
-            </a>
+        <a href="{% url 'gear_edit' object.pk %}">
+            <button type="button"
+                    class="btn btn-primary btn-lg">{% trans "Editar informações" %}</button>
+        </a>
+        {% else %}
+        {% if user.is_authenticated %}
+            <div class="center">
+                {% if gear.amount != 0 %}
+                    <button id='add_cart' class="btn btn-primary"
+                            type="button" data-toggle="modal" data-target="#exampleModal{{ gear.pk }}">
+                        {% trans "Adicionar ao carrinho" %}
+                    </button>
+                    <div class="modal fade" id="exampleModal{{ gear.pk }}" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        {% trans "Adicionar ao carrinho" %}
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    {{ gear.name_descr }}
+                                    {{ total }}
+
+                                    <div style="float: right;">
+                                        <a href="">
+                                            <i class="fas fa-plus fa-2x"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="fas fa-minus fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{% url 'add_item' gear.pk %}">
+                                        <button type="button"
+                                                class="btn btn-primary btn-lg">{% trans "Sim" %}</button>
+                                    </a>
+                                    <button type="button" class="btn btn-secondary btn-lg"
+                                            data-dismiss="modal">
+                                        {% trans "Não" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <button id='add_cart' class="btn btn-primary"
+                            type="button" data-toggle="modal" data-target="#exampleModal{{ gear.pk }}">
+                        {% trans "Sem estoque" %}
+                    </button>
+                    <div class="modal fade" id="exampleModal{{ gear.pk }}" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        {% trans "Fazer solicitação" %}
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Deseja receber notificações quando houver {{ gear.name_descr }} em estoque?
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{% url 'request_order' gear.pk %}">
+                                        <button type="button"
+                                                class="btn btn-primary btn-lg">{% trans "Sim" %}</button>
+                                    </a>
+                                    <button type="button" class="btn btn-secondary btn-lg"
+                                            data-dismiss="modal">
+                                        {% trans "Não" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
         {% endif %}
+    {% endif %}
+
     </div>
 
 {% endblock %}
