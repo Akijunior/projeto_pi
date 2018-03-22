@@ -22,7 +22,7 @@ class Buy(models.Model):
 class Item(models.Model):
     buy = models.ForeignKey('Buy', related_name='items',on_delete=models.CASCADE)
     gear = models.ForeignKey('core.Gear', verbose_name='peça', related_name='item', on_delete=models.CASCADE)
-    amount = models.FloatField('Quantidade', default=0)
+    amount = models.IntegerField('Quantidade', default=0)
 
     def __str__(self):
         return str(self.gear) + " X " + str(self.amount)

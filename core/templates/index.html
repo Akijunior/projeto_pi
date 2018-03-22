@@ -8,7 +8,7 @@
         </a>
         {% if not user.is_authenticated %}
             <span class="item-header" style="padding-right: 10px;">
-                        <a href="{% url 'login' %}">Entre ou registre-se</a></span>
+                        <a href="{% url 'login' %}">{% trans 'Entre ou registre-se' %}</a></span>
         {% else %}
             <span class="item-header" style="padding-right: 10px;">
                 <span>{{ user }}</span>
@@ -140,5 +140,5 @@
             </div>
         {% endfor %}
     </div>
-    <button class="btn btn-primary" onclick="show_message()" type="button">{% trans "Mostrar mensagem" %}</button>
+    <button class="btn btn-primary" onclick="show_message()" type="button">{% trans "Saudação" %}</button>
 {% endblock %}

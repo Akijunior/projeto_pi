@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 23:19-0300\n"
-"PO-Revision-Date: 2018-03-20 23:20-0234\n"
+"POT-Creation-Date: 2018-03-22 10:44-0300\n"
+"PO-Revision-Date: 2018-03-22 10:49-0234\n"
 "Last-Translator: b'Anonymous User <ju@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,7 +19,143 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: .\account\templates\account\index.html:5
+#: .\account\templates\account\user_profile.html:40
+msgid "Editar perfil"
+msgstr "Edit profile"
+
+#: .\active_gears\settings.py:127
+msgid "Português"
+msgstr "Portuguese"
+
+#: .\active_gears\settings.py:128
+msgid "English"
+msgstr "English"
+
+#: .\active_gears\settings.py:129
+msgid "Espanõl"
+msgstr "Spanish"
+
+#: .\buy\templates\buy\payment_page.html:4
+#| msgid "Página index em teste"
+msgid "Página de pagamento"
+msgstr "Test page index"
+
+#: .\buy\templates\buy\payment_page.html:9
+msgid "Confirmar"
+msgstr "Confirm"
+
+#: .\buy\templates\buy\purchase_status.html:13
+msgid "Finalizar Compra"
+msgstr "Checkout"
+
+#: .\core\templates\base_loged.html:32
+msgid "Buscar"
+msgstr "Search"
+
+#: .\core\templates\base_loged.html:40
+msgid "Acessórios"
+msgstr "Accessories"
+
+#: .\core\templates\base_loged.html:44
+msgid "Roda"
+msgstr "Wheel"
+
+#: .\core\templates\base_loged.html:48
+msgid "Iluminação"
+msgstr "Lighting"
+
+#: .\core\templates\base_loged.html:52
+msgid "Multimidia"
+msgstr "Multimedia"
+
+#: .\core\templates\base_loged.html:56
+msgid "Segurança"
+msgstr "Safety"
+
+#: .\core\templates\base_loged.html:60
+msgid "Grades"
+msgstr "Grids"
+
+#: .\core\templates\base_loged.html:64
+msgid "Motocicletas"
+msgstr "Motorcycles"
+
+#: .\core\templates\base_loged.html:71
+msgid "Cadastrar"
+msgstr "Register"
+
+#: .\core\templates\base_loged.html:74
+msgid "Produtos"
+msgstr "Products"
+
+#: .\core\templates\base_loged.html:76
+msgid "Montadoras"
+msgstr "Automakers"
+
+#: .\core\templates\base_loged.html:78
+msgid "Veículos"
+msgstr "Vehicles"
+
+#: .\core\templates\base_loged.html:80
+msgid "Modelos"
+msgstr "Models"
+
+#: .\core\templates\gear_manage.html:8
+msgid "Nome da peça:"
+msgstr "Name of the piece:"
+
+#: .\core\templates\gear_manage.html:9
+msgid "Tipo da peça:"
+msgstr "Type of the piece:"
+
+#: .\core\templates\gear_manage.html:10
+msgid "Modelo da peça:"
+msgstr "Model of the piece:"
+
+#: .\core\templates\gear_manage.html:11
+msgid "Valor da peça:"
+msgstr "Value of the piece:"
+
+#: .\core\templates\gear_manage.html:12
+msgid "Quantidade em estoque:"
+msgstr "Amount of the piece:"
+
+#: .\core\templates\gear_manage.html:13
+msgid "Quantidade de visualizações:"
+msgstr "Amount of views:"
+
+#: .\core\templates\gear_manage.html:17
+msgid "Editar informações"
+msgstr "Edit info:"
+
+#: .\core\templates\gear_manage.html:25 .\core\templates\gear_manage.html:33
+#: .\core\templates\index.html:53 .\core\templates\index.html:61
+msgid "Adicionar ao carrinho"
+msgstr "Add to cart"
+
+#: .\core\templates\gear_manage.html:57 .\core\templates\gear_manage.html:91
+#: .\core\templates\index.html:85 .\core\templates\index.html:119
+msgid "Sim"
+msgstr "Yes"
+
+#: .\core\templates\gear_manage.html:61 .\core\templates\gear_manage.html:95
+#: .\core\templates\index.html:89 .\core\templates\index.html:123
+msgid "Não"
+msgstr "No"
+
+#: .\core\templates\gear_manage.html:70 .\core\templates\index.html:98
+msgid "Sem estoque"
+msgstr "Out of stock"
+
+#: .\core\templates\gear_manage.html:78 .\core\templates\index.html:106
+msgid "Fazer solicitação"
+msgstr "Make request"
+
+#: .\core\templates\index.html:11
+msgid "Entre ou registre-se"
+msgstr "Login or register"
+
+#: .\core\templates\index.html:27
 msgid ""
 "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
 "com a maior facilidade já vista no mercado."
@@ -27,7 +163,7 @@ msgstr ""
 "Here you will be able to order and purchase parts for your cars with the "
 "best facility ever seen on the market."
 
-#: .\account\templates\account\index.html:7
+#: .\core\templates\index.html:29
 #, python-format
 msgid ""
 "\n"
@@ -37,66 +173,30 @@ msgstr ""
 "\n"
 "This message is: %(msg)s"
 
-#: .\account\templates\account\index.html:18
+#: .\core\templates\index.html:40
 #, python-format
 msgid "%(gear.name_descr)s"
 msgstr "%(gear.name_descr)s"
 
-#: .\account\templates\account\index.html:27
-msgid "Mostrar mensagem"
-msgstr "Show message"
+#: .\core\templates\index.html:135
+msgid "Gerenciar item"
+msgstr "Item manage"
 
-#: .\account\views.py:18
+#: .\core\templates\index.html:143
+#| msgid "Iluminação"
+msgid "Saudação"
+msgstr "Greeting"
+
+#: .\core\views.py:15
 msgid "Mensagem de produto"
 msgstr "Product message"
 
-#: .\account\views.py:19
+#: .\core\views.py:16
 msgid "Nova mensagem de produto"
 msgstr "New product message"
 
-#: .\active_gears\settings.py:126
-msgid "Português"
-msgstr "Portuguese"
-
-#: .\active_gears\settings.py:127
-msgid "English"
-msgstr "English"
-
-#: .\active_gears\settings.py:128
-msgid "Espanõl"
-msgstr "Spanish"
-
-#: .\core\templates\base_loged.html:32
-msgid "Buscar"
-msgstr "Search"
-
-#: .\core\templates\base_loged.html:45
-msgid "Acessórios"
-msgstr "Accessories"
-
-#: .\core\templates\base_loged.html:49
-msgid "Roda"
-msgstr "Wheel"
-
-#: .\core\templates\base_loged.html:53
-msgid "Iluminação"
-msgstr "Lighting"
-
-#: .\core\templates\base_loged.html:57
-msgid "Multimidia"
-msgstr "Multimedia"
-
-#: .\core\templates\base_loged.html:61
-msgid "Segurança"
-msgstr "Safety"
-
-#: .\core\templates\base_loged.html:65
-msgid "Grades"
-msgstr "Grids"
-
-#: .\core\templates\base_loged.html:69
-msgid "Motocicletas"
-msgstr "Motorcycles"
+#~ msgid "Mostrar mensagem"
+#~ msgstr "Show message"
 
 #~ msgid ""
 #~ "\n"
@@ -105,9 +205,6 @@ msgstr "Motorcycles"
 #~ msgstr ""
 #~ "\n"
 #~ "<b>%(gear.name_descr)s | R$%(gear.price)s</b>"
-
-#~ msgid "Página index em teste"
-#~ msgstr "Test page index"
 
 #~ msgid "Registrar"
 #~ msgstr "Register"

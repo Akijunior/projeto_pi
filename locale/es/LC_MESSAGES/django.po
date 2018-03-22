@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 23:19-0300\n"
-"PO-Revision-Date: 2018-03-20 23:20-0234\n"
+"POT-Creation-Date: 2018-03-22 10:44-0300\n"
+"PO-Revision-Date: 2018-03-22 10:55-0234\n"
 "Last-Translator: b'Anonymous User <ju@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,7 +19,143 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: .\account\templates\account\index.html:5
+#: .\account\templates\account\user_profile.html:40
+msgid "Editar perfil"
+msgstr "Editar perfil"
+
+#: .\active_gears\settings.py:127
+msgid "Português"
+msgstr "Portugués"
+
+#: .\active_gears\settings.py:128
+msgid "English"
+msgstr "Inglés"
+
+#: .\active_gears\settings.py:129
+msgid "Espanõl"
+msgstr "Espanõl"
+
+#: .\buy\templates\buy\payment_page.html:4
+#| msgid "Página index em teste"
+msgid "Página de pagamento"
+msgstr "Página de pago"
+
+#: .\buy\templates\buy\payment_page.html:9
+msgid "Confirmar"
+msgstr "Confirmar"
+
+#: .\buy\templates\buy\purchase_status.html:13
+msgid "Finalizar Compra"
+msgstr "Finalizar Compra"
+
+#: .\core\templates\base_loged.html:32
+msgid "Buscar"
+msgstr "Buscar"
+
+#: .\core\templates\base_loged.html:40
+msgid "Acessórios"
+msgstr "Accesorios"
+
+#: .\core\templates\base_loged.html:44
+msgid "Roda"
+msgstr "Rueda"
+
+#: .\core\templates\base_loged.html:48
+msgid "Iluminação"
+msgstr "Iluminación"
+
+#: .\core\templates\base_loged.html:52
+msgid "Multimidia"
+msgstr "Multimedia"
+
+#: .\core\templates\base_loged.html:56
+msgid "Segurança"
+msgstr "Seguridad"
+
+#: .\core\templates\base_loged.html:60
+msgid "Grades"
+msgstr "Rejillas"
+
+#: .\core\templates\base_loged.html:64
+msgid "Motocicletas"
+msgstr "Motocicletas"
+
+#: .\core\templates\base_loged.html:71
+msgid "Cadastrar"
+msgstr "Registro"
+
+#: .\core\templates\base_loged.html:74
+msgid "Produtos"
+msgstr "Productos"
+
+#: .\core\templates\base_loged.html:76
+msgid "Montadoras"
+msgstr "Fabricante de automóviles"
+
+#: .\core\templates\base_loged.html:78
+msgid "Veículos"
+msgstr "Automóviles"
+
+#: .\core\templates\base_loged.html:80
+msgid "Modelos"
+msgstr "Modelos"
+
+#: .\core\templates\gear_manage.html:8
+msgid "Nome da peça:"
+msgstr "Nombre de la pieza:"
+
+#: .\core\templates\gear_manage.html:9
+msgid "Tipo da peça:"
+msgstr "Tipo de pieza:"
+
+#: .\core\templates\gear_manage.html:10
+msgid "Modelo da peça:"
+msgstr "Modelo de la pieza:"
+
+#: .\core\templates\gear_manage.html:11
+msgid "Valor da peça:"
+msgstr "Valor de la pieza:"
+
+#: .\core\templates\gear_manage.html:12
+msgid "Quantidade em estoque:"
+msgstr "Cantidad en stock:"
+
+#: .\core\templates\gear_manage.html:13
+msgid "Quantidade de visualizações:"
+msgstr "Cantidad de visualizaciones:"
+
+#: .\core\templates\gear_manage.html:17
+msgid "Editar informações"
+msgstr "Editar información"
+
+#: .\core\templates\gear_manage.html:25 .\core\templates\gear_manage.html:33
+#: .\core\templates\index.html:53 .\core\templates\index.html:61
+msgid "Adicionar ao carrinho"
+msgstr "Añadir a la cesta de compra"
+
+#: .\core\templates\gear_manage.html:57 .\core\templates\gear_manage.html:91
+#: .\core\templates\index.html:85 .\core\templates\index.html:119
+msgid "Sim"
+msgstr "Si"
+
+#: .\core\templates\gear_manage.html:61 .\core\templates\gear_manage.html:95
+#: .\core\templates\index.html:89 .\core\templates\index.html:123
+msgid "Não"
+msgstr "No"
+
+#: .\core\templates\gear_manage.html:70 .\core\templates\index.html:98
+msgid "Sem estoque"
+msgstr "Sin stock"
+
+#: .\core\templates\gear_manage.html:78 .\core\templates\index.html:106
+msgid "Fazer solicitação"
+msgstr "Hacer solicitud"
+
+#: .\core\templates\index.html:11
+msgid "Entre ou registre-se"
+msgstr "Ingresa o Regístrate"
+
+#: .\core\templates\index.html:27
 msgid ""
 "Aqui vocês poderão realizar pedidos e compras de peças para seus automóveis "
 "com a maior facilidade já vista no mercado."
@@ -27,7 +163,7 @@ msgstr ""
 "Aquí podrán realizar pedidos y compras de piezas para sus automóviles con la"
 " máxima facilidad ya vista en el mercado."
 
-#: .\account\templates\account\index.html:7
+#: .\core\templates\index.html:29
 #, python-format
 msgid ""
 "\n"
@@ -37,66 +173,30 @@ msgstr ""
 "\n"
 "El mensaje es: %(msg)s"
 
-#: .\account\templates\account\index.html:18
+#: .\core\templates\index.html:40
 #, python-format
 msgid "%(gear.name_descr)s"
 msgstr "%(gear.name_descr)s"
 
-#: .\account\templates\account\index.html:27
-msgid "Mostrar mensagem"
-msgstr "Mostrar mensajes"
+#: .\core\templates\index.html:135
+msgid "Gerenciar item"
+msgstr "Administrar elemento"
 
-#: .\account\views.py:18
+#: .\core\templates\index.html:143
+#| msgid "Iluminação"
+msgid "Saudação"
+msgstr "Saludo"
+
+#: .\core\views.py:15
 msgid "Mensagem de produto"
 msgstr "Mensaje de producto"
 
-#: .\account\views.py:19
+#: .\core\views.py:16
 msgid "Nova mensagem de produto"
 msgstr "Nuevo mensaje de producto"
 
-#: .\active_gears\settings.py:126
-msgid "Português"
-msgstr "Portugués"
-
-#: .\active_gears\settings.py:127
-msgid "English"
-msgstr "Inglés"
-
-#: .\active_gears\settings.py:128
-msgid "Espanõl"
-msgstr "Espanõl"
-
-#: .\core\templates\base_loged.html:32
-msgid "Buscar"
-msgstr "Buscar"
-
-#: .\core\templates\base_loged.html:45
-msgid "Acessórios"
-msgstr "Accesorios"
-
-#: .\core\templates\base_loged.html:49
-msgid "Roda"
-msgstr "Rueda"
-
-#: .\core\templates\base_loged.html:53
-msgid "Iluminação"
-msgstr "Iluminación"
-
-#: .\core\templates\base_loged.html:57
-msgid "Multimidia"
-msgstr "Multimedia"
-
-#: .\core\templates\base_loged.html:61
-msgid "Segurança"
-msgstr "Seguridad"
-
-#: .\core\templates\base_loged.html:65
-msgid "Grades"
-msgstr "Rejillas"
-
-#: .\core\templates\base_loged.html:69
-msgid "Motocicletas"
-msgstr "Motocicletas"
+#~ msgid "Mostrar mensagem"
+#~ msgstr "Mostrar mensajes"
 
 #~ msgid ""
 #~ "\n"
@@ -105,9 +205,6 @@ msgstr "Motocicletas"
 #~ msgstr ""
 #~ "\n"
 #~ "<b>%(gear.name_descr)s | R$%(gear.price)s</b>"
-
-#~ msgid "Página index em teste"
-#~ msgstr "Página de índice en prueba"
 
 #~ msgid "Registrar"
 #~ msgstr "Registro"

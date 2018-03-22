@@ -1,11 +1,12 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1>Página de pagamento</h1>
+    {% load i18n %}
+    <h1>{% trans 'Página de pagamento' %}</h1>
     <form method="POST" class="post-form">
         {% csrf_token %}
         <div class="form-control">
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Confirmar</button>
+            <button type="submit" class="btn btn-primary">{% trans 'Confirmar' %}</button>
         </div>
     </form>
 {% endblock %}

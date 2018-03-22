@@ -5,12 +5,12 @@
         <div class="form-group pull-right">
             <img src="{{ object.thumb.url }}" class="img-responsive pull-left rounded mx-auto d-block"
                  width="150px" height="150px"/></div>
-        <div class="form-group"><b>Nome da peça: </b>{{ object.name_descr }}</div>
-        <div class="form-group"><b>Tipo da peça: </b>{{ object.get_type_gear_display }}</div>
-        <div class="form-group"><b>Modelo da peça: </b>{{ object.modelo }}</div>
-        <div class="form-group"><b>Valor da peça: R$</b>{{ object.price }}0</div>
-        <div class="form-group"><b>Quantidade em estoque: </b>{{ object.amount }}</div>
-        <div class="form-group"><b>Quantidade de visualizações: </b>{{ object.views }}</div>
+        <div class="form-group"><b>{% trans 'Nome da peça:' %} </b>{{ object.name_descr }}</div>
+        <div class="form-group"><b>{% trans 'Tipo da peça:' %} </b>{{ object.get_type_gear_display }}</div>
+        <div class="form-group"><b>{% trans 'Modelo da peça:' %} </b>{{ object.modelo }}</div>
+        <div class="form-group"><b>{% trans 'Valor da peça:' %} R$</b>{{ object.price }}0</div>
+        <div class="form-group"><b>{% trans 'Quantidade em estoque:' %} </b>{{ object.amount }}</div>
+        <div class="form-group"><b>{% trans 'Quantidade de visualizações:' %} </b>{{ object.views }}</div>
         {% if user.is_staff %}
         <a href="{% url 'gear_edit' object.pk %}">
             <button type="button"

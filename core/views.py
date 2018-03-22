@@ -130,7 +130,8 @@ def gear_edit(request, pk):
         if form.is_valid():
             gear = form.save(commit=False)
             gear.save()
-            return redirect('user_profile')
+            messages.success(request, 'A alteração em %s foi feita com sucesso' % gear.name_descr)
+            return redirect('index')
     else:
         form = GearForm(instance=gear)
     return render(request, 'gear_edit.html', {'form': form})
