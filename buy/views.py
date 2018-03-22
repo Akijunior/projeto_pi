@@ -33,7 +33,6 @@ def purchase_status(request, pk):
     buy = get_object_or_404(Buy, pk=pk)
     total_value = 0
     for item in buy.items.all():
-        print(len(buy.items.all()))
         if item.amount:
             total_value += item.gear.price * item.amount
         else:
@@ -56,6 +55,7 @@ def payment(request, pk):
         for item in buy.items.all():
             m_total_value += item.gear.price * item.amount
         modelo.buy = buy
+        modelo.total_value = float(m_total_value)
         modelo.save()
         messages.success(request, 'Pagamento efetuado.')
         buy.status = 'closed'

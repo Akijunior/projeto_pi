@@ -42,7 +42,7 @@ class Gear(models.Model):
     name_descr = models.CharField("Nome da peça", max_length=60)
     type_gear = models.CharField(max_length=20, choices=TYPE_GEAR_CHOICES, default='sem_tipo', verbose_name='Tipo da peça')
     modelo = models.ForeignKey(Modelo, null=True, related_name='pecas', on_delete=models.SET_NULL, verbose_name='Modelo da peça')
-    price = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Preço')
+    price = models.FloatField(verbose_name='Preço da peça')
     amount = models.IntegerField('Quantidade em estoque', blank=True, default=0)
     views = models.IntegerField('Visualizações', blank=True, default=0)
     thumb = models.ImageField(verbose_name='Imagem representativa',

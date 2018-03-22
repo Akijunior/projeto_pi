@@ -13,7 +13,7 @@
             <span class="item-header" style="padding-right: 10px;">
                 <span>{{user}}</span>
                 <a href="{% url 'logout' %}">Sair</a></span>
-            
+
                 <a href="{% if buy %}{% url 'purchase_status' buy.pk %}{% endif %}">
                     <i class="fas fa-cart-arrow-down fa-2x" style="margin-left: 10px;"></i>
                 </a>
@@ -66,12 +66,12 @@
                                         <div class="modal-body">
 
                                                 {{ gear.name_descr }}
-                                                {{ total }} 
+                                                {{ total }}
 
                                             <div style="float: right;">
                                                 <a href="">
                                                     <i class="fas fa-plus fa-2x"></i>
-                                                </a>  
+                                                </a>
                                                 <a href="">
                                                     <i class="fas fa-minus fa-2x"></i>
                                                 </a>
